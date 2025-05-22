@@ -102,7 +102,7 @@
                         <div class="modal fade" id="registrarAsistenciaModal{{ $maestro->id }}" tabindex="-1" aria-hidden="true">
                             <div class="modal-dialog">
                                 <div class="modal-content">
-                                    <form action="{{ route('asistencias.store') }}" method="POST">
+                                    <form action="{{ route('asistencias.individual') }}" method="POST">
                                         @csrf
                                         <input type="hidden" name="periodo_id" value="{{ $periodo->id }}">
                                         <input type="hidden" name="maestro_id" value="{{ $maestro->id }}"> <!-- Maestro ID agregado -->
