@@ -8,8 +8,8 @@
         <meta name="author" content="">
         <title>Dashboard - SB Admin</title>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-        <!--<link href="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/style.min.css" rel="stylesheet">
-        <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>-->
+        <link href="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/style.min.css" rel="stylesheet">
+        <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
         <link href="{{ asset('recursos/template/css/styles.css') }}" rel="stylesheet">
         <link href="/recursos/template/css/styles.css" rel="stylesheet">
 
@@ -24,8 +24,7 @@
             <!-- Navbar Search-->
             <form class="d-none d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0">
                 <div class="input-group">
-                    <input class="form-control" type="text" placeholder="Search for..." aria-label="Search for..." aria-describedby="btnNavbarSearch">
-                    <button class="btn btn-primary" id="btnNavbarSearch" type="button"><i class="fas fa-search"></i></button>
+
                 </div>
             </form>
             <!-- Navbar-->
@@ -49,16 +48,16 @@
                             
                                 @auth
                                     @if (Auth::user()->rol == 0)
-                                    <div class="sb-sidenav-menu-heading">Core</div>
+                                    <!--<div class="sb-sidenav-menu-heading">Core</div>
                                         <a class="nav-link" href="{{ route('dashboard.admin') }}">
                                             <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                                             Dashboard
-                                        </a>
+                                        </a>-->
                                     @else
-                                        <!-- <a class="nav-link" href="{{ route('dashboard.user') }}">
+                                        <!--<a class="nav-link" href="{{ route('dashboard.user') }}">
                                             <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
-                                            Dashboard
-                                        </a> -->
+                                            Cursos
+                                        </a>-->
                                     @endif
                                 @endauth
                          

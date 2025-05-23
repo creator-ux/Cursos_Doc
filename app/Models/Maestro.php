@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use App\Models\Curso;
 
 class Maestro extends Authenticatable //le cambie el Model por Authenticatable
 {
@@ -27,7 +28,7 @@ class Maestro extends Authenticatable //le cambie el Model por Authenticatable
 
 public function cursos()
 {
-    return $this->belongsToMany(Curso::class, 'curso_maestro');
+    return $this->belongsToMany(Cursos::class, 'curso_maestro', 'maestro_id', 'curso_id');
 }
 
 public function datosLaborales()

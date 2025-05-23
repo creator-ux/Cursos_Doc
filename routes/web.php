@@ -11,6 +11,7 @@ use App\Http\Controllers\CursoController;
 use App\Http\Controllers\PeriodoController;
 use App\Http\Controllers\MaestroPeriodoController;
 use App\Http\Controllers\Auth\LoginController;
+use App\Models\Asistencia;
 
 Route::get('/', function () {
      if (Auth::check()) {
@@ -128,4 +129,22 @@ Route::get('/usuario', function () {
  // Rutas para búsqueda dinámica
  Route::get('/buscar-matricula/{matricula}', [CedulaController::class, 'buscarPorMatricula']);
  Route::get('/curso/{id}', [CursoController::class, 'getCurso']);
+
+ //cursos del docente-------------------------------------------------------------------------------------
+
+Route::get('/mis-cursos', function () {
+    $usuario = Auth::user();
+
+    // Trae cursos relacionados con el usuario (tabla curso_maestro)
+    $cursos = $usuario->cursos()->with('periodo')->get();
+
+    // Trae asistencias relacionadas si las manejas por curso y usuario
+    $asistencias = Asistencia::with('periodo')
+        ->where('maestro_id', $usuario->id)
+        ->get();
+
+    return view('dashboard.mis-cursos', compact('usuario', 'cursos', 'asistencias'));
+})->middleware('auth')->name('dashboard.mis-cursos');
+
+
 });

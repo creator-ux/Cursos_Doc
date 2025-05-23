@@ -29,4 +29,9 @@ class Periodo extends Model
         return $this->hasMany(Asistencia::class);
     }
     
+    public function cursos()
+    {
+        return $this->hasMany(Curso::class);
+    }
+    
 }

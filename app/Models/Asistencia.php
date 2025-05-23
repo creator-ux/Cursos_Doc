@@ -27,9 +27,10 @@ class Asistencia extends Model
         return $this->belongsTo(Maestro::class);
     }
 
+    protected $table = 'asistencias';
     public function periodo()
     {
-        return $this->belongsTo(Periodo::class);
+        return $this->belongsTo(Periodo::class, 'periodo_id');
     }
 
 }
