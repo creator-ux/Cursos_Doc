@@ -56,7 +56,7 @@ class DatabaseSeeder extends Seeder
             [
                 'matricula' => '21850023',
                 'nombre_completo' => 'Iván Alexander',
-                'apellido_paterno' => 'Trres',
+                'apellido_paterno' => 'Torres',
                 'apellido_materno' => 'Miravette',
                 'departamento' => 'Ciencias Básicas',
                 'email' => '21850023@ittizimin.edu.mx',
