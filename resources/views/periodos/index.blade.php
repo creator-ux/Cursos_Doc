@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="container">
-    <h1>PERIODOS REGISTRADOS PARA CURSOS DOCENTES</h1>
+    <h1>CURSOS REGISTRADOS</h1>
 
     <div class="d-flex justify-content-between mb-4">
         <a href="{{ route('periodos.create') }}" class="btn btn-primary">
@@ -42,7 +42,7 @@
                     <thead class="table-light">
                         <tr>
                             <th>ID</th>
-                            <th>PERIODO</th>
+                            <th>CURSOS</th>
                             <th>INICIO</th>
                             <th>FIN</th>
                             <th>ESTATUS</th>

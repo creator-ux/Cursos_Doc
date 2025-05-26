@@ -11,7 +11,8 @@ use App\Http\Controllers\CursoController;
 use App\Http\Controllers\PeriodoController;
 use App\Http\Controllers\MaestroPeriodoController;
 use App\Http\Controllers\Auth\LoginController;
-use App\Models\Asistencia;
+use App\Models\Asistencia;  
+use App\Models\Cursos as Curso;
 
 Route::get('/', function () {
      if (Auth::check()) {
@@ -146,5 +147,10 @@ Route::get('/mis-cursos', function () {
     return view('dashboard.mis-cursos', compact('usuario', 'cursos', 'asistencias'));
 })->middleware('auth')->name('dashboard.mis-cursos');
 
+Route::post('/cursos/{curso}/subir-documento', [CursoController::class, 'subirDocumento'])->name('cursos.subirDocumento');
+
+Route::get('/tareas-subidas', [CursoController::class, 'tareasSubidasUsuario'])->name('tareas');
+
+Route::get('/cursos/tareas', [CursoController::class, 'verTareasCursos'])->name('cursos.tareas');
 
 });
